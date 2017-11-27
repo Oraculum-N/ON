@@ -1,8 +1,8 @@
 <?php
-    use ON\Register;
     use ON\App;
+use ON\Register;
 
-    Register::set('titulo', 'Home');
-	App::loadView()
- 	    ->addTemplate('geral')
- 	    ->loadPage('home');
+Register::set('titulo', 'Home');
+    App::loadView()
+        ->addTemplate('geral')
+        ->loadPage('home');

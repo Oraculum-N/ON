@@ -1,4 +1,4 @@
 <?php
-	Oraculum_WebApp::LoadView()
- 	    ->AddTemplate('geral')
- 	    ->LoadPage('suporte');
+    Oraculum_WebApp::LoadView()
+        ->AddTemplate('geral')
+        ->LoadPage('suporte');

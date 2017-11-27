@@ -1,8 +1,7 @@
 <?php
-    use ON\Register;
-    use ON\App;
+use ON\App;
 
-    header('HTTP/1.1 404 Not Found');
-	App::loadView()
- 	    ->addTemplate('geral')
- 	    ->loadPage('404');
+header('HTTP/1.1 404 Not Found');
+    App::loadView()
+        ->addTemplate('geral')
+        ->loadPage('404');
