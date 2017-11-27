@@ -1,7 +1,8 @@
 <?php
 
-    /**  
+    /**
      * @param string $class The fully-qualified class name.
+     *
      * @return void
      */
     function onLoader($class)
@@ -9,14 +10,13 @@
         if (!defined('PATH')):
             define('PATH', dirname(__FILE__).DS);
         endif;
-        if (strpos($class, 'ON')===TRUE):
+        if (strpos($class, 'ON') === true):
             return;
         endif;
-        $class=str_replace('ON\\', '', $class);
+        $class = str_replace('ON\\', '', $class);
         $classfile = PATH.'core\\'.$class.'.php';
         if (file_exists($classfile)):
-            include_once($classfile);
-        else:
+            include_once $classfile; else:
             //throw new Exception('[Error autoload] File not found ('.$classfile.')');
         endif;
     }

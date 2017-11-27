@@ -1,4 +1,4 @@
-<?php $titulo=ON\Register::get('titulo'); ?>
+<?php $titulo = ON\Register::get('titulo'); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,8 +12,8 @@
     <body>
 		<div id="all">
 <?php
-	/*
-		Carregando o Elemento Menu (/views/elements/menu.php)
+    /*
+        Carregando o Elemento Menu (/views/elements/menu.php)
                 Um elemento pode ser chamado dentro de outro elemento
-	*/
-	ON\Views::LoadElement('menu');
+    */
+    ON\Views::LoadElement('menu');

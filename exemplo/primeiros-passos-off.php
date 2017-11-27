@@ -17,7 +17,7 @@
     </head>
     <body>
 		<div id="all">
-			<?php include('./views/elements/menu.php'); ?>
+			<?php include './views/elements/menu.php'; ?>
 <div id="content">
     <h1>Primeiros Passos</h1>
 <p>
@@ -39,4 +39,4 @@ Acesse novamente o link <strong>Primeiros Passos</strong> dispon&iacute;vel no m
 </p>
 </div>
 <?php
-    include('views/elements/footer.php');
+    include 'views/elements/footer.php';

@@ -1,59 +1,65 @@
 <?php
-    namespace ON;
 
+namespace ON;
 
-    class DBO extends Models
+class DBO extends Models
+{
+    private $_host = null;
+    private $_username = null;
+    private $_password = null;
+    private $_squema = null;
+
+    // Contrutor
+    public function __construct($model)
     {
-        private $_host=NULL;
-        private $_username=NULL;
-        private $_password=NULL;
-        private $_squema=NULL;
+        parent::__construct($model);
+    }
 
-        // Contrutor
-        public function __construct($model)
-        {
-            parent::__construct($model);
-        }
-
-        public static function execSQL($sql, $showsql=false)
-        {
-            if($showsql):
+    public static function execSQL($sql, $showsql = false)
+    {
+        if ($showsql):
                 echo '<br />SQL: <pre>'.$sql.'</pre>';
-            endif;
-            try {
-                return self::$connection->query($sql);
-            } catch (\PDOException $e) {
-                throw new Exception('PDO Connection Error: '.$e->getMessage());
-            }
-        }
+        endif;
 
-        public function getInsertId() {
-            try {
-                return self::$connection->lastInsertId();
-            } catch (\PDOException $e) {
-                throw new Exception('PDO Connection Error: '.$e->getMessage());
-            }
+        try {
+            return self::$connection->query($sql);
+        } catch (\PDOException $e) {
+            throw new Exception('PDO Connection Error: '.$e->getMessage());
         }
+    }
 
-        public function start() {
-            $this->execSQL('begin');
+    public function getInsertId()
+    {
+        try {
+            return self::$connection->lastInsertId();
+        } catch (\PDOException $e) {
+            throw new Exception('PDO Connection Error: '.$e->getMessage());
         }
+    }
 
-        public function commit() {
-            $this->execSQL('commit');
-        }
+    public function start()
+    {
+        $this->execSQL('begin');
+    }
 
-        public function rollback() {
-            $this->execSQL('rollback');
-        }
+    public function commit()
+    {
+        $this->execSQL('commit');
+    }
 
-        public static function dados($query) {
-            return $query->fetchAll();
-        }
+    public function rollback()
+    {
+        $this->execSQL('rollback');
+    }
 
-        public function linhas($query)
-        {
-            return $query->rowCount();
-            //return $query->query('SELECT FOUND_ROWS()')->fetchColumn();
-        }
-      }
+    public static function dados($query)
+    {
+        return $query->fetchAll();
+    }
+
+    public function linhas($query)
+    {
+        return $query->rowCount();
+        //return $query->query('SELECT FOUND_ROWS()')->fetchColumn();
+    }
+}

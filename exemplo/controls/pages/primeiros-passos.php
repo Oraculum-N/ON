@@ -1,8 +1,8 @@
 <?php
-    use ON\Register;
     use ON\App;
+use ON\Register;
 
-    Register::set('titulo', 'Primeiros Passos');
+Register::set('titulo', 'Primeiros Passos');
     App::loadView()
- 	    ->addTemplate('geral')
- 	    ->loadPage('primeiros-passos');
+        ->addTemplate('geral')
+        ->loadPage('primeiros-passos');

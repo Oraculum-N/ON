@@ -1,12 +1,12 @@
 <?php
-	
-	/*
-		A classe Register serve para registrar variaveis
-		entre arquivos (controladores, views e models)
-		Para definir: Oraculum_Register::set('variavel', 'valor');
-		Para recuperar: Oraculum_Register::get('variavel');
-	*/
-	ON\Register::set('titulo', 'Home');
+
+    /*
+        A classe Register serve para registrar variaveis
+        entre arquivos (controladores, views e models)
+        Para definir: Oraculum_Register::set('variavel', 'valor');
+        Para recuperar: Oraculum_Register::get('variavel');
+    */
+    ON\Register::set('titulo', 'Home');
 ?>
 <a href="http://oraculumframework.org/" target="_blank">
 	<img src="<?php echo URL; ?>public/img/oraculum.png" alt="Oraculum Framework" title="Oraculum" id="logo" />

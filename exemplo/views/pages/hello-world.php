@@ -1,5 +1,5 @@
 <?php
-	ON\Register::set('titulo', 'Suporte');
+    ON\Register::set('titulo', 'Suporte');
  ?>
 <div id="content">
     <h1>Hello World</h1>
@@ -10,7 +10,7 @@
 
 <p>
 <?php 
-    $code='<?php
+    $code = '<?php
     use ON\App;
     class HelloWorldController{
         public function __construct() {
@@ -27,7 +27,7 @@
     
 <p>
 <?php 
-    $code='<?php
+    $code = '<?php
     use ON\App;
     App::loadView()
         ->addTemplate(\'geral\')
